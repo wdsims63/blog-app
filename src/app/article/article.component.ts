@@ -15,8 +15,8 @@ export class ArticleComponent implements OnInit {
   constructor(private _articleService: ArticleService, private router: Router, private aR: ActivatedRoute) { }
 
   ngOnInit() {
-    this.aR.params.subscribe(params => {
-      let id = params['_id'];
+    this.aR.params.subscribe((params) => {
+      let id = params['id'];
 
       this._articleService.getArticle(id)
         .subscribe(res => this.article = res);
